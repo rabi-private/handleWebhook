@@ -16,17 +16,15 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
   var body = req.body.events
-  var lineContent = { 
-    type:body[0].type,
-    replyToken : body[0].replyToken,
-    complete:'complete',
-  };
-  console.log(lineContent);
-  console.log(body);
+ // var lineContent = { 
+  //  type:body[0].type,
+  //  replyToken : body[0].replyToken,
+  //  complete:'complete',
+ // };
+ // console.log(lineContent);
+ // console.log(body);
   //  console.log(req.body);
-  var name = {
-    name:body
-  };
+  /*
   var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
@@ -34,7 +32,7 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
-      axios.post('https://kurapitalcrmwebhook.tk/api/v1/sendtophp', name)
+      axios.post('https://kurapitalcrmwebhook.tk/api/v1/sendtophp', body)
   .then(response => {
    name = response.data;
   })
@@ -64,6 +62,9 @@ restService.post("/echo", function(req, res) {
     displayText: speech,
     source: "webhook-echo-sample"
   });
+  
+  
+  */
 });
 
 restService.post("/audio", function(req, res) {

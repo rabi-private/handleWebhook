@@ -15,6 +15,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
+  console.log('i am rai');
   var name = {
     name:'rabie'
   };
@@ -39,7 +40,7 @@ restService.post("/echo", function(req, res) {
         items: [
           {
             simpleResponse: {
-              textToSpeech: req
+              textToSpeech: speech
             }
           }
         ]

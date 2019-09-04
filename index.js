@@ -23,7 +23,7 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
-      axios.post('https://kurapitalcrmwebhook.tk/api/v1/sendtophp', req)
+      axios.post('https://kurapitalcrmwebhook.tk/api/v1/sendtophp', speechResponse)
   .then(response => {
    name = response.data;
   })
@@ -46,7 +46,7 @@ restService.post("/echo", function(req, res) {
   };
   
   return res.json({
-    payload: name,
+    payload: speechResponse,
     //data: speechResponse,
     fulfillmentText: speech,
     speech: speech,

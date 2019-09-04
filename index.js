@@ -18,10 +18,12 @@ restService.post("/echo", function(req, res) {
   var body = req.body.events
   var lineContent = { 
     type:body[0].type,
-    replyToken : body[0].replyToken
+    replyToken : body[0].replyToken,
+    complete:'complete,
   };
   console.log(lineContent);
-//  console.log(req.body);
+console.log(body)
+  //  console.log(req.body);
   var name = {
     name:'rabie'
   };

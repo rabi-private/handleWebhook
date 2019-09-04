@@ -22,7 +22,7 @@ restService.post("/echo", function(req, res) {
     complete:'complete,
   };
   console.log(lineContent);
-console.log(body)
+  console.log(body);
   //  console.log(req.body);
   var name = {
     name:'rabie'

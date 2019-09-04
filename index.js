@@ -14,6 +14,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
+  var name;
   var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
@@ -21,6 +22,13 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
+      axios.get('https://kurapitalcrmwebhook.tk/api/v1/itijimemo?extention=7022')
+  .then(response => {
+   name = response.data;
+  })
+  .catch(error => {
+    console.log(error);
+  });
   var speechResponse = {
     google: {
       expectUserResponse: true,
@@ -37,7 +45,7 @@ restService.post("/echo", function(req, res) {
   };
   
   return res.json({
-    payload: speechResponse,
+    payload: name,
     //data: speechResponse,
     fulfillmentText: speech,
     speech: speech,

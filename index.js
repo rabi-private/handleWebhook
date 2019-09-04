@@ -15,7 +15,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  console.log(req);
+  console.log(req.body);
   var name = {
     name:'rabie'
   };

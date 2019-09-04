@@ -25,7 +25,7 @@ restService.post("/echo", function(req, res) {
   console.log(body);
   //  console.log(req.body);
   var name = {
-    name:'rabie'
+    name:body
   };
   var speech =
     req.body.queryResult &&

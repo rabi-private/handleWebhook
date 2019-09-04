@@ -16,7 +16,7 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
   console.log('i received data');
-  var body = req.body.events
+  var body = req.body
   axios.post('https://kurapitalcrmwebhook.tk/api/v1/sendtophp', body)
   .then(response => {
    name = response.data;

@@ -17,7 +17,8 @@ restService.use(bodyParser.json());
 restService.post("/echo", function(req, res) {
   var body = req.body.events
   var lineContent = { 
-    replyToken : body
+    type:body[0].type,
+    replyToken : body[0].replyToken
   };
   console.log(lineContent);
 //  console.log(req.body);

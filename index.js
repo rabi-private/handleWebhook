@@ -16,6 +16,13 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
   var body = req.body.events
+  axios.post('https://kurapitalcrmwebhook.tk/api/v1/sendtophp', body)
+  .then(response => {
+   name = response.data;
+  })
+  .catch(error => {
+    console.log(error);
+  });
  // var lineContent = { 
   //  type:body[0].type,
   //  replyToken : body[0].replyToken,

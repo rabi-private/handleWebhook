@@ -19,7 +19,7 @@ restService.post("/echo", function(req, res) {
   var lineContent = { 
     type:body[0].type,
     replyToken : body[0].replyToken,
-    complete:'complete,
+    complete:'complete',
   };
   console.log(lineContent);
   console.log(body);
